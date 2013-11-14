@@ -12,7 +12,7 @@
  */
 class Widget extends CWidget
 {
-	  private $_assetsUrl;
+    private $_assetsUrl;
     private $_assetsFolder;
 
     public function init()
