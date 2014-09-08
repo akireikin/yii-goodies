@@ -1,12 +1,12 @@
 <?php
 /**
- * Базовый класс для виджетов с ресурсами (assets).
+ * Basic class for widgets with assets.
  *
- * От него должны наследоваться все виджеты, имеющие ресурсы.
- * Папка с ресурсами для виджета должна распологаться на том же уровне,
- * что и класс виджета и иметь название 'assets'.
- * Все ресурсы расположенные в этой папке будут автоматически опубликованы.
- * Элементы, указывающие на JS и CSS файлы будут так-же добавлены в DOM.
+ * All widgets with assets should extend this class.
+ * Assets folder should be at the same dir as the widget class.
+ * Assets folder should be named 'assets'
+ * Every static content in assets folder will be automatically published.
+ * Links to JS and CSS files will also be embedded in DOM.
  *
  * @author Alex Akr <opexus@gmail.com>
  */
@@ -23,7 +23,7 @@ class Widget extends CWidget
     }
 
     /**
-     * регистрация ресурсов
+     * Assets publishing
      */
     protected function publishAssets()
     {
@@ -31,7 +31,7 @@ class Widget extends CWidget
     }
 
     /**
-     * рекурсивная регистрация всех ресурсов
+     * Recurisive registration of assets
      */
     protected function registerAssets()
     {
@@ -47,9 +47,9 @@ class Widget extends CWidget
     }
 
     /**
-     * Физическая папка с ресурсами на сервере
+     * Assets folder
      *
-     * @todo проверять существует ли директория assets
+     * @todo check if assets dir really exists
      * @return string
      */
     protected function getAssetsFolder()
